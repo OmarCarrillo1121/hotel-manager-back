@@ -1,8 +1,10 @@
+import express from "express";
 import dotenv from "dotenv";
-import Server from "./index";
+import app from "./index";
+import routes from "./routes/index";
 
 dotenv.config();
 
-const server = new Server();
+const server = express();
 
-server.listen();
+app.use("/", routes);

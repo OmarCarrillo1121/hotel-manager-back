@@ -1,19 +1,10 @@
 import express, { Application } from "express";
 
-class Server {
-  private app: Application;
-  private port: string;
+const app: Application = express();
+const PORT: string = process.env.PORT || "3001";
 
-  constructor() {
-    this.app = express();
-    this.port = process.env.PORT || "3001";
-  }
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
-  listen() {
-    this.app.listen(this.port, () => {
-      console.log(`Server running on port ${this.port}`);
-    });
-  }
-}
-
-export default Server;
+export default app;
