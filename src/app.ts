@@ -1,10 +1,8 @@
-import express from "express";
-import dotenv from "dotenv";
-import app from "./index";
+import express, { Application } from "express";
 import routes from "./routes/index";
 
-dotenv.config();
-
-const server = express();
+const app: Application = express();
 
 app.use("/", routes);
+
+export default app;
